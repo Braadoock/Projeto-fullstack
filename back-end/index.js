@@ -2,12 +2,15 @@ const express = require('express')
 
 const Database = require('better-sqlite3')
 
+const cors = require('cors')
+
+
 const server = express()
 
 const db = Database('../database/db.sqlite')
 server.use(express.json())
 
-
+server.use(cors())
 
 
 server.get('/', (req, res) => {
