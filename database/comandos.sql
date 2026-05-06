@@ -6,3 +6,4 @@ CREATE TABLE
         "url" TEXT NOT NULL,
         "criado_em" TEXT DEFAULT CURRENT_TIMESTAMP
     ) STRICT;
+
