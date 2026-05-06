@@ -1,11 +1,8 @@
 -- database: ./db.sqlite
-
 CREATE TABLE
     "links" (
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "titulo" TEXT,
-    "url" TEXT,
-    criado_em DATETIME
+        "id" INTEGER PRIMARY KEY,
+        "titulo" TEXT NOT NULL,
+        "url" TEXT NOT NULL,
+        "criado_em" TEXT DEFAULT CURRENT_TIMESTAMP
     ) STRICT;
-
-DROP TABLE "links";
