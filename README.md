@@ -1,4 +1,4 @@
-# 🔗 Link Manager
+# PROJETO FULLSTACK
 
 Uma aplicação fullstack para organizar e gerenciar seus links favoritos em um só lugar.
 
@@ -26,27 +26,30 @@ Com este sistema você pode salvar, editar, excluir e acessar rapidamente seus l
 ## 🛠️ Tecnologias utilizadas
 
 ### Frontend
+
 - React
 - HTML / CSS
 - JavaScript
 
 ### Backend
+
 - Node.js
 - Express
 
 ### Banco de Dados
+
 - Sqlite
 
 ---
 
 ## 📡 API (Rotas)
 
-| Método | Rota        | Descrição                  |
-|--------|------------|----------------------------|
-| POST   | /links     | Criar novo link           |
-| GET    | /links     | Listar todos os links     |
-| PUT    | /links/:id | Atualizar um link         |
-| DELETE | /links/:id | Deletar um link           |
+| Método | Rota       | Descrição             |
+| ------ | ---------- | --------------------- |
+| POST   | /links     | Criar novo link       |
+| GET    | /links     | Listar todos os links |
+| PUT    | /links/:id | Atualizar um link     |
+| DELETE | /links/:id | Deletar um link       |
 
 ---
 
@@ -56,3 +59,4 @@ Com este sistema você pode salvar, editar, excluir e acessar rapidamente seus l
 
 ```bash
 git clone https://github.com/Braadoock/Projeto-fullstack
+```
