@@ -34,6 +34,7 @@ aside input {
     border: none;
     background-color: #0f3460;
     color: white;
+    box-sizing: border-box;
 }
 
 aside button {
