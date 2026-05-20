@@ -23,9 +23,14 @@ server.get('/links', (req, res) => {
     res.json(links)
 })
 
+server.get('/links/publicados', (req, res) => {
+    const links = db.prepare('SELECT * FROM links WHERE publicado = 1').all()
+    res.json(links)
+})
+
 server.post('/links', (req, res) => {
-    const { titulo, url } = req.body
-    db.prepare('INSERT INTO links (titulo, url) VALUES (?, ?)').run(titulo, url)
+    const { titulo, url, publicado } = req.body
+    db.prepare('INSERT INTO links (titulo, url, publicado) VALUES (?, ?, ?)').run(titulo, url, publicado)
     res.json({mensagem: 'Link criado com sucesso!' })
 })
 
@@ -37,8 +42,8 @@ server.delete('/links/:id', (req, res) => {
 
 server.put('/links/:id', (req, res) => {
     const { id } = req.params
-    const { titulo, url} = req.body
-    db.prepare('UPDATE links SET titulo = ?, url = ? WHERE id = ?').run(titulo, url, id)
+    const { titulo, url, publicado} = req.body
+    db.prepare('UPDATE links SET titulo = ?, url = ?, publicado = ? WHERE id = ?').run(titulo, url, publicado, id)
     res.json({mensagem: 'Link foi atualizado' })
 })
 
