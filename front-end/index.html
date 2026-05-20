@@ -17,11 +17,16 @@
             <form action="">
                 <input type="text" id="titulo" placeholder="Título">
                 <input type="text" id="url" placeholder="URL">
+                    <select id="publicado">
+                        <option value="0">Não publicar</option>
+                        <option value="1">Publicar</option>
+                    </select>
                 <button onclick="salvarLink()">Salvar</button>
             </form>
         </aside>
         <section id="lista-links"></section>
     </main>
+
 
     <script src="app.js"></script>
 

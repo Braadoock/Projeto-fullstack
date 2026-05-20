@@ -36,13 +36,14 @@ function excluirLink(id) {
 
 function salvarLink() {
     const titulo = document.getElementById('titulo').value
-    const url = document.getElementById('url').value 
+    const url = document.getElementById('url').value
+    const publicado = document.getElementById('publicado').value 
 
     if (linkEditandoId) {
         fetch('http://localhost:3000/links/' + linkEditandoId, {
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ titulo, url })
+            body: JSON.stringify({ titulo, url, publicado })
         })
         .then(() => {
             linkEditandoId = null
@@ -54,7 +55,7 @@ function salvarLink() {
     fetch('http://localhost:3000/links/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify({ titulo, url })
+        body: JSON.stringify({ titulo, url, publicado })
     })
     .then(() => buscarlinks())
     }
