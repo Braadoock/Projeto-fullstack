@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 /database
+=======
+database/db.sqlite
+>>>>>>> back-end
