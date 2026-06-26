@@ -7,12 +7,21 @@
     <title>Projeto</title>
 </head>
 <body>
-    <header>
+    <div id="tela-login">
+    Usuario: <input type="text" id="username" placeholder="Digite seu usuário">
+    Senha: <input type="password" id="password" placeholder="Digite sua senha">
+    <button onclick="login()">Login</button>
+    </div>
+
+    <header style="display:none" id="header">
         <h1>Cadastre seu link</h1>
-        <button onclick="toggleTema()">🌙 / ☀️</button>
+        <div>
+            <button onclick="toggleTema()">🌙 / ☀️</button>
+            <button onclick="logout()">Sair</button>
+        </div>
     </header>
 
-    <main>
+    <main style="display:none" id="main">
         <aside>
             <form action="">
                 <input type="text" id="titulo" placeholder="Título">

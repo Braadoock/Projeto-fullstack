@@ -8,7 +8,9 @@ let linkEditandoId = null
 
 
 function buscarlinks() {
-    fetch('http://localhost:3000/links')
+    fetch('http://localhost:3000/links', {
+        headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') }
+    })
         .then(resposta => resposta.json())
         .then(links => {
             const div = document.getElementById('lista-links')
@@ -29,7 +31,8 @@ function buscarlinks() {
 
 function excluirLink(id) {
     fetch('http://localhost:3000/links/' + id, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') }
     })
     .then(() => buscarlinks())
 }
@@ -41,7 +44,7 @@ function salvarLink() {
     if (linkEditandoId) {
         fetch('http://localhost:3000/links/' + linkEditandoId, {
             method: 'PUT',
-            headers: {'Content-Type': 'application/json'},
+            headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token'), 'Content-Type': 'application/json' },
             body: JSON.stringify({ titulo, url })
         })
         .then(() => {
@@ -53,7 +56,7 @@ function salvarLink() {
 
     fetch('http://localhost:3000/links/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json'},
+        headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token'), 'Content-Type': 'application/json'},
         body: JSON.stringify({ titulo, url })
     })
     .then(() => buscarlinks())
@@ -72,10 +75,35 @@ function toggleTema() {
     document.body.classList.toggle('light-mode')
 }
 
+function login() {
+    const username = document.getElementById('username').value
+    const password = document.getElementById('password').value
 
+    fetch('http://localhost:3000/auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json'},
+    body: JSON.stringify({ username, password })
+})
+    .then(response => response.json())
+    .then(dados => {
+        localStorage.setItem('token', dados.token)
+        document.getElementById('tela-login').style.display = 'none'
+        document.getElementById('header').style.display = 'block'
+        document.getElementById('main').style.display = 'flex'
+        buscarlinks()
+    })
+}
 
+ const token = localStorage.getItem('token')
+       if (token) {
+            buscarlinks()
+       } else {
+           document.getElementById('tela-login').style.display = 'block'
+}
 
-
-
-
-buscarlinks()
+function logout() {
+    localStorage.removeItem('token')
+    document.getElementById('tela-login').style.display = 'block'
+    document.getElementById('header').style.display = 'none'
+    document.getElementById('main').style.display = 'none'
+}
