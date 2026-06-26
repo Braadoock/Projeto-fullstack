@@ -4,7 +4,6 @@ const Database = require('better-sqlite3')
 
 const cors = require('cors')
 
-
 const server = express()
 
 const db = Database('../database/db.sqlite')
