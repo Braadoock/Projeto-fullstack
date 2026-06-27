@@ -7,31 +7,55 @@
     <title>Projeto</title>
 </head>
 <body>
-    <div id="tela-login">
-    Usuario: <input type="text" id="username" placeholder="Digite seu usuário">
-    Senha: <input type="password" id="password" placeholder="Digite sua senha">
-    <button onclick="login()">Login</button>
+<div id="tela-login">
+    <div id="login-card">
+        <div id="login-imagem">
+            <img src="https://4kwallpapers.com/images/walls/thumbs_2t/15361.jpg" alt="imagem">
+        </div>
+        <div id="login-formulario">
+            <h2>Bem-vindo de volta!</h2>
+            <p>Faça login na sua conta</p>
+            <label>Usuário</label>
+            <input type="text" id="username" placeholder="Digite seu usuário">
+            <label>Senha</label>
+            <input type="password" id="password" placeholder="Digite sua senha">
+            <button onclick="login()">Entrar</button>
+            <p id="castro-texto">Não tem uma conta? <a href="#">Cadastre-se</a></p>
+        </div>
     </div>
+</div>
 
-    <header style="display:none" id="header">
-        <h1>Cadastre seu link</h1>
-        <div>
-            <button onclick="toggleTema()">🌙 / ☀️</button>
+   <div id="app" style="display:none">
+    <aside id="sidebar">
+        <div id="sidebar-logo">
+            🔗 MyLinks
+        </div>
+        <nav>
+            <a href="#">📋 Meus Links</a>
+        </nav>
+        <div id="sidebar-usuario">
+            <div id="sidebar-avatar">A</div>
+            <div>
+                <p id="sidebar-nome">Andy</p>
+                <span>Online</span>
+            </div>
             <button onclick="logout()">Sair</button>
         </div>
-    </header>
+    </aside>
 
-    <main style="display:none" id="main">
-        <aside>
-            <form action="">
-                <input type="text" id="titulo" placeholder="Título">
-                <input type="text" id="url" placeholder="URL">
-                <button onclick="salvarLink()">Salvar</button>
-            </form>
-        </aside>
+    <div id="conteudo">
+        <div id="topo">
+            <h1>Meus Links</h1>
+            <button onclick="toggleTema()">🌙 / ☀️</button>
+        </div>
+        <div id="area-formulario">
+            <input type="text" id="titulo" placeholder="Título">
+            <input type="text" id="url" placeholder="URL">
+            <button onclick="salvarLink()">+ Salvar Link</button>
+        </div>
         <section id="lista-links"></section>
-    </main>
-
+    </div>
+</div>
     <script src="app.js"></script>
 
 

@@ -1,5 +1,5 @@
 body {
-    background-color: #1a1a2e;
+    background-color: #0d0d0d;
     color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background-color: #16213e;
+    background-color: #1a0a0a;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
@@ -19,7 +19,7 @@ main {
 }
 
 aside {
-    background-color: #16213e;
+    background-color: #1a0a0a;
     padding: 20px;
     border-radius: 8px;
     width: 250px;
@@ -32,7 +32,7 @@ aside input {
     padding: 8px;
     border-radius: 4px;
     border: none;
-    background-color: #0f3460;
+    background-color: #2a0a0a;
     color: white;
     box-sizing: border-box;
 }
@@ -56,7 +56,7 @@ section {
 }
 
 .card {
-    background-color: #16213e;
+    background-color: #1a0a0a;
     padding: 15px;
     border-radius: 8px;
 }
@@ -86,7 +86,7 @@ section {
 }
 
 .btn-editar {
-    background-color: #0f3460;
+    background-color: #2a0a0a;
     color: white;
 }
 
@@ -111,4 +111,213 @@ body.light-mode aside input {
 
 body.light-mode .card {
     background-color: #dde1e7;
+}
+
+#tela-login {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://4kwallpapers.com/images/walls/thumbs_2t/14967.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+}
+
+#tela-login::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    
+}
+
+#login-card {
+    display: flex;
+    width: 750px;
+    height: 480px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+#login-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+#login-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#login-formulario {
+    width: 55%;
+    background-color: #1a0a0a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    gap: 12px;
+}
+
+#login-formulario h2 {
+    font-size: 22px;
+    color: #ff4444;
+}
+
+#login-formulario p {
+    color: #a0a0b0;
+    margin-bottom: 10px;
+}
+
+#login-formulario label {
+    color: #cc3333;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+#login-formulario input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #3d0000;
+    background-color: #2a0a0a;
+    color: white;
+    font-size: 1rem;
+}
+
+#login-formulario button {
+    padding: 12px;
+    background-color: #8b0000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#login-formulario button:hover {
+    background-color: #cc0000;
+}
+
+#app {
+    display: flex;
+    height: 100vh;
+    margin: -20px;
+}
+
+#sidebar {
+    width: 250px;
+    background-color: #1a0a0a;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+}
+
+#sidebar-logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #e94560;
+    padding: 10px 0;
+    border-bottom: 1px solid #2a0a0a;
+    margin-bottom: 10px;
+}
+
+nav a {
+    display: block;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    background-color: #2a0a0a;
+}
+
+#sidebar-usuario {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 20px;
+    border-top: 1px solid #2a0a0a;
+}
+
+#sidebar-avatar {
+    width: 36px;
+    height: 36px;
+    background-color: #e94560;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+#sidebar-usuario p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+#sidebar-usuario span {
+    font-size: 0.75rem;
+    color: #00cc66;
+}
+
+#sidebar-usuario button {
+    margin-left: auto;
+    padding: 6px 10px;
+    background-color: #e94560;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#conteudo {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#area-formulario {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#area-formulario input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #1a0a0a;
+    color: white;
+    flex: 1;
+}
+
+#area-formulario button {
+    padding: 10px 20px;
+    background-color: #e94560;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }

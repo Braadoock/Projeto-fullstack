@@ -88,22 +88,23 @@ function login() {
     .then(dados => {
         localStorage.setItem('token', dados.token)
         document.getElementById('tela-login').style.display = 'none'
-        document.getElementById('header').style.display = 'block'
-        document.getElementById('main').style.display = 'flex'
+        document.getElementById('app').style.display = 'flex'
+        document.getElementById('app').style.display = 'flex'
         buscarlinks()
     })
 }
 
  const token = localStorage.getItem('token')
        if (token) {
+            document.getElementById('app').style.display = 'flex'
             buscarlinks()
        } else {
-           document.getElementById('tela-login').style.display = 'block'
+           document.getElementById('tela-login').style.display = 'flex'
 }
 
 function logout() {
     localStorage.removeItem('token')
-    document.getElementById('tela-login').style.display = 'block'
-    document.getElementById('header').style.display = 'none'
-    document.getElementById('main').style.display = 'none'
+    document.getElementById('tela-login').style.display = 'flex'
+    document.getElementById('app').style.display = 'none'
+    document.getElementById('app').style.display = 'none'
 }
