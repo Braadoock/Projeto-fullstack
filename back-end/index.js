@@ -17,6 +17,12 @@ db.exec(`
         password TEXT NOT NULL
         )
     `)
+try { db.exec(`ALTER TABLE users ADD COLUMN nome TEXT`) } catch {}
+try { db.exec(`ALTER TABLE users ADD COLUMN email TEXT`) } catch {}
+try { db.exec(`ALTER TABLE users ADD COLUMN telefone TEXT`) } catch {}
+try { db.exec(`ALTER TABLE users ADD COLUMN endereco TEXT`) } catch {}
+try { db.exec(`ALTER TABLE users ADD COLUMN data_nascimento TEXT`) } catch {}
+try { db.exec(`ALTER TABLE users ADD COLUMN genero TEXT`) } catch {}
 server.use(express.json())
 
 server.use(cors())

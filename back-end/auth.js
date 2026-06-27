@@ -7,10 +7,10 @@ const router = express.Router();
 
 function authRoutes(db) {
     router.post('/register', (req, res) => {
-      const { username, password } = req.body;
+      const { username, password, nome, email, telefone, endereco, data_nascimento, genero } = req.body;
       const hash = bcrypt.hashSync(password, 10);
       try {
-        db.prepare('INSERT INTO users (username, password) VALUES (?, ?)').run(username, hash);
+        db.prepare('INSERT INTO users (username, password, nome, email, telefone, endereco, data_nascimento, genero) VALUES (?, ?, ?, ?, ?, ?, ?, ?)').run(username, hash, nome, email, telefone, endereco, data_nascimento, genero);
         res.status(201).json({ message: 'Usuário registrado com sucesso' });
       } catch (err) {
         res.status(400).json({ error: 'Usuário já existe' });
